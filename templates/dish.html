@@ -14,14 +14,14 @@
         <thead>
         <tr>
             <th scope="col">Dish name</th>
-            <th scope="col">Dish type</th>
+            <th scope="col">Calories amount</th>
         </tr>
         </thead>
         <tbody>
         {% for dish in allDishes%}
         <tr>
             <td> {{dish.dishname}}</td>
-            <td> {{dish.dishtype}}</td>
+            <td> {{dish.calories_amount}}</td>
             <td>
                 <a href="/edit_dish?name={{dish.dishname}}"
                    title="edit button">
