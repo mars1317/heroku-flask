@@ -1,6 +1,8 @@
+from dao.data import *
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import psycopg2
+
 
 class PostgresDb(object):
     _instance = None
@@ -13,9 +15,11 @@ class PostgresDb(object):
                                               database=database, user=username, password=password)
                 cursor = connection.cursor()
 
+                # execute a statement
                 print('PostgreSQL database version:')
                 cursor.execute('SELECT version()')
 
+                # display the PostgreSQL database server version
                 db_version = cursor.fetchone()
                 print(db_version)
 
