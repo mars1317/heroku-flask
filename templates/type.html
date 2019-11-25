@@ -5,25 +5,29 @@
     <table class="table">
         <thead>
         <tr>
+<!--            <th scope="col">ID</th>-->
             <th scope="col">Type</th>
+            <th scope="col">Dish Name</th>
         </tr>
         </thead>
         <tbody>
         {% for type in allTypes%}
         <tr>
+<!--            <td> {{type.id}}</td>-->
             <td> {{type.typename}}</td>
+            <td> {{type.dishname_fk}}</td>
 
             <td>
-                <a href="/edit_type?name={{type.typename}}"
+                <a href="/edit_type?name={{type.id}}"
                    title="edit button">
                     <button type="button" class="btn btn-warning" name="btn_edit_typ"
-                            data-user_id="{{type.typename}}">Edit
+                            data-user_id="{{type.id}}">Edit
                     </button>
                 </a>
-                <a href="/delete_type?name={{type.typename}}"
+                <a href="/delete_type?name={{type.id}}"
                    title="delete button">
                     <button type="button" class="btn btn-danger" name="btn_delete_type"
-                            data-user_id="{{type.typename}}">Delete
+                            data-user_id="{{type.id}}">Delete
                     </button>
                 </a>
             </td>

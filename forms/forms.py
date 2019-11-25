@@ -29,8 +29,36 @@ class TypeForm(Form):
     typename = StringField("Type name: ", [
         validators.DataRequired("Please enter type name."),
         validators.Length(3, 255, "Name should be from 3 to 255 symbols")])
+    dishname_fk = StringField("Dish name: ", [
+        validators.DataRequired("Please enter dish name."),
+        validators.Length(3, 255, "Name should be from 3 to 255 symbols")])
+    old_name = HiddenField()
+    old_id = IntegerField(HiddenField())
+    submit = SubmitField("Save")
+class RestorauntForm(Form):
+    name = StringField("Name of restoraunt: ", [
+        validators.DataRequired("Please enter name of restoraunt."),
+        validators.Length(3, 255, "Name should be from 3 to 255 symbols")])
+    dishname_fk = StringField("Dish name: ", [
+        validators.DataRequired("Please enter dish name."),
+        validators.Length(3, 255, "Name should be from 3 to 255 symbols")])
+    star = IntegerField("Star of restoraunt: ", [
+        validators.DataRequired("Please enter star of restoraunt."),
+        validators.NumberRange(min=1, max=5)]
+                        )
+
+    country = StringField("country of restoraunt: ", [
+        validators.DataRequired("Please enter country of restoraunt."),
+        validators.Length(3, 255, "country should be from 3 to 255 symbols")])
+    city = StringField("city of restoraunt: ", [
+        validators.DataRequired("Please enter city of restoraunt."),
+        validators.Length(3, 20, "city should be from 3 to 255 symbols")])
+    address = StringField("adress of restoraunt: ", [
+        validators.DataRequired("Please enter adress of restoraunt."),
+        validators.Length(3, 20, "adress should be from 3 to 255 symbols")])
     old_name = HiddenField()
     submit = SubmitField("Save")
+
 
 # class IngridientForm(Form):
 #     dishname = StringField("Dish name: ", [
