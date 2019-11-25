@@ -39,7 +39,7 @@ class PostgresDb(object):
         return cls._instance
 
     def __init__(self):
-        self.connection = self._instance.connection
+#         self.connection = self._instance.connection
         self.cursor = self._instance.cursor
         self.sqlalchemy_session = self._instance.sqlalchemy_session
         self.sqlalchemy_engine = self._instance.sqlalchemy_engine
