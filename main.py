@@ -450,5 +450,5 @@ def dashboard():
 #             return redirect(url_for('index_ingridient'))
 #
 #     return render_template('ingridients_form.html', form=form, form_name="New ingridient", action="new_ingridient")
-ывыif __name__ == "__main__":
+if __name__ == "__main__":
     app.run()
