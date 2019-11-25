@@ -54,7 +54,7 @@ class PostgresDb(object):
             return result
 
     def __del__(self):
-        self.cursor.close()
+#         self.cursor.close()
         self.connection.close()
         self.sqlalchemy_session.close()
 
