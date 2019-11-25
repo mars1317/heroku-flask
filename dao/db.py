@@ -37,30 +37,27 @@ class PostgresDb(object):
                 print('Error: connection not established {}'.format(error))
 
         return cls._instance
-
-    def __init__(self):
-#         self.connection = self._instance.connection
-        self.cursor = self._instance.cursor
-        self.sqlalchemy_session = self._instance.sqlalchemy_session
-        self.sqlalchemy_engine = self._instance.sqlalchemy_engine
-
-    def execute(self, query):
-        try:
-            result = self.cursor.execute(query)
-        except Exception as error:
-            print('error execting query "{}", error: {}'.format(query, error))
-            return None
-        else:
-            return result
-
-    def __del__(self):
-#         self.cursor.close()
-        self.connection.close()
-        self.sqlalchemy_session.close()
+    #
+    # def __init__(self):
+    #     self.connection = self._instance.connection
+    #     self.cursor = self._instance.cursor
+    #     self.sqlalchemy_session = self._instance.sqlalchemy_session
+    #     self.sqlalchemy_engine = self._instance.sqlalchemy_engine
+    #
+    # def execute(self, query):
+    #     try:
+    #         result = self.cursor.execute(query)
+    #     except Exception as error:
+    #         print('error execting query "{}", error: {}'.format(query, error))
+    #         return None
+    #     else:
+    #         return result
+    #
+    # def __del__(self):
+    #     # self.cursor.close()
+    #     self.connection.close()
+    #     self.sqlalchemy_session.close()
 
 
 if __name__ == "__main__":
-    db = PostgresDb()
-    db = PostgresDb()
-    db = PostgresDb()
     db = PostgresDb()
