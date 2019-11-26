@@ -33,7 +33,8 @@ class TypeForm(Form):
         validators.DataRequired("Please enter dish name."),
         validators.Length(3, 255, "Name should be from 3 to 255 symbols")])
     old_name = HiddenField()
-    old_id = IntegerField(HiddenField())
+    old_type = HiddenField()
+
     submit = SubmitField("Save")
 class RestorauntForm(Form):
     name = StringField("Name of restoraunt: ", [
