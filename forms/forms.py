@@ -10,7 +10,7 @@ class DishForm(Form):
     calories_amount = IntegerField("Group: ", [
         validators.DataRequired("Please enter calories amount")])
     calories_amount = IntegerField("Calories amount: ", [
-        validators.DataRequired("Please enter calories amount")])
+        validators.DataRequired("Please enter calories amount"), validators.NumberRange(min=1, max=5000)])
     old_name = HiddenField()
 
     submit = SubmitField("Save")
