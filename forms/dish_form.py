@@ -6,7 +6,7 @@ from wtforms import validators
 class DishForm(Form):
     dishname = StringField("Name: ", [
         validators.DataRequired("Please enter discipline name."),
-        validators.Length(3, 255, "Name should be from 3 to 255 symbols")
+        validators.Length(3, 200, "Name should be from 3 to 200 symbols")
     ])
     dishtype = StringField("Teacher Name: ", [
         validators.DataRequired("Please enter teacher name."),
