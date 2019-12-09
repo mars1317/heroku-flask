@@ -101,7 +101,7 @@ def graphics():
     stars = [restaurant.star for restaurant in allRestaurants]
     bar = go.Bar(
         x=stars,
-        y=[restaurant.star for restaurant in allRestaurants]
+        y=[restaurant.name for restaurant in allRestaurants]
     )
     ids=[1]
     data = [bar]
